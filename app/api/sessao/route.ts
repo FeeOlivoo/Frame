@@ -1,50 +1,45 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-// Removemos as importações antigas de senhaConfere e sessaoConfigurada
-import { COOKIE, criarToken, ehEditor } from '@/lib/sessao';
+import { prisma } from '@/lib/prisma';
+import { COOKIE, criarToken, obterIdLogado, opcoesCookie } from '@/lib/sessao';
 
-const prisma = new PrismaClient();
-
+// quem está olhando: logado (com o nome) ou visitante?
 export async function GET() {
-  return NextResponse.json({ editor: await ehEditor(), configurado: true });
+  const userId = await obterIdLogado();
+  if (!userId) return NextResponse.json({ editor: false, configurado: true });
+
+  const usuario = await prisma.user.findUnique({ where: { id: userId }, select: { nome: true } });
+  return NextResponse.json({ editor: Boolean(usuario), nome: usuario?.nome, configurado: true });
 }
 
 export async function POST(req: Request) {
   try {
-    const { email, senha } = await req.json();
+    const corpo = await req.json().catch(() => ({}));
+    const email = typeof corpo.email === 'string' ? corpo.email.trim() : '';
+    const senha = typeof corpo.senha === 'string' ? corpo.senha : '';
+    const lembrar = corpo.lembrar !== false; // "lembrar de mim" (padrão: sim)
 
     if (!email || !senha) {
       return NextResponse.json({ erro: 'Email e senha são obrigatórios.' }, { status: 400 });
     }
 
-    // 1. Busca o utilizador pelo email no banco de dados
-    const usuario = await prisma.user.findUnique({
-      where: { email }
+    // e-mail sem diferenciar maiúsculas de minúsculas
+    const usuario = await prisma.user.findFirst({
+      where: { email: { equals: email, mode: 'insensitive' } },
     });
 
-    if (!usuario) {
-      await new Promise((r) => setTimeout(r, 800)); // Atrasa a resposta para evitar ataques de força bruta
+    // a mesma mensagem (e o mesmo atraso) para e-mail inexistente e senha errada
+    const senhaValida = usuario ? await bcrypt.compare(senha, usuario.senha) : false;
+    if (!usuario || !senhaValida) {
+      await new Promise((r) => setTimeout(r, 800)); // atrapalha tentativas em sequência
       return NextResponse.json({ erro: 'Email ou senha incorretos.' }, { status: 401 });
     }
 
-    // 2. Compara a senha digitada com a senha criptografada no banco
-    const senhaValida = await bcrypt.compare(senha, usuario.senha);
-
-    if (!senhaValida) {
-      await new Promise((r) => setTimeout(r, 800));
-      return NextResponse.json({ erro: 'Email ou senha incorretos.' }, { status: 401 });
-    }
-
-    // 3. Login com sucesso! 
     const res = NextResponse.json({ editor: true, nome: usuario.nome });
-    
-    // Passamos o ID do utilizador para dentro do token para sabermos de quem é a lista
-    res.cookies.set(COOKIE.nome, await criarToken(usuario.id), COOKIE.opcoes);
-    
+    res.cookies.set(COOKIE.nome, await criarToken(usuario.id, lembrar), opcoesCookie(lembrar));
     return res;
   } catch (error) {
-    console.error("Erro no login:", error);
+    console.error('Erro no login:', error);
     return NextResponse.json({ erro: 'Erro interno no servidor.' }, { status: 500 });
   }
 }

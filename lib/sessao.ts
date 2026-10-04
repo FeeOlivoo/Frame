@@ -3,7 +3,8 @@ import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 const NOME = 'sessao';
-const DURACAO_S = 60 * 60 * 24 * 30; // 30 dias
+const DURACAO_S = 60 * 60 * 24 * 30; // com "lembrar de mim": 30 dias
+const DURACAO_CURTA_S = 60 * 60 * 24; // sem "lembrar de mim": cookie de sessão, com validade máxima de 24 h
 
 export const COOKIE = {
   nome: NOME,
@@ -16,18 +17,30 @@ export const COOKIE = {
   },
 };
 
-const assinar = (valor: string) =>
-  createHmac('sha256', process.env.SEGREDO_SESSAO ?? 'segredo_padrao_dev').update(valor).digest('base64url');
+// Com "lembrar de mim" o cookie dura 30 dias; sem isso, é um cookie de sessão (some ao fechar o navegador).
+export function opcoesCookie(lembrar: boolean) {
+  const { maxAge, ...base } = COOKIE.opcoes;
+  return lembrar ? { ...base, maxAge } : base;
+}
+
+// Sem SEGREDO_SESSAO configurado, não existe sessão válida (nunca usar um segredo "padrão").
+export const segredo = () => {
+  const s = process.env.SEGREDO_SESSAO;
+  if (!s) throw new Error('SEGREDO_SESSAO não está configurado no servidor.');
+  return s;
+};
+
+const assinar = (valor: string) => createHmac('sha256', segredo()).update(valor).digest('base64url');
 
 // Agora o token é criado usando o ID real do usuário
-export async function criarToken(userId: string) {
-  const base = `${userId}.${Math.floor(Date.now() / 1000) + DURACAO_S}`;
+export async function criarToken(userId: string, lembrar = true) {
+  const base = `${userId}.${Math.floor(Date.now() / 1000) + (lembrar ? DURACAO_S : DURACAO_CURTA_S)}`;
   return `${base}.${assinar(base)}`;
 }
 
 // Extrai e valida o ID guardado dentro do token
 function lerIdDoToken(token?: string): string | null {
-  if (!token) return null;
+  if (!token || !process.env.SEGREDO_SESSAO) return null;
   const partes = token.split('.');
   if (partes.length !== 3) return null;
   

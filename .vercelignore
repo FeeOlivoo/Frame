@@ -9,3 +9,5 @@ backup-animes.json
 backup-dev.db
 relatorio-*.txt
 *.zip
+app/generated
+tsconfig.tsbuildinfo
