@@ -1,4 +1,4 @@
-import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
+import { createHmac, timingSafeEqual } from 'node:crypto';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
@@ -16,37 +16,41 @@ export const COOKIE = {
   },
 };
 
-export const sessaoConfigurada = () => Boolean(process.env.SENHA_EDICAO && process.env.SEGREDO_SESSAO);
-
 const assinar = (valor: string) =>
-  createHmac('sha256', process.env.SEGREDO_SESSAO ?? '').update(valor).digest('base64url');
+  createHmac('sha256', process.env.SEGREDO_SESSAO ?? 'segredo_padrao_dev').update(valor).digest('base64url');
 
-export function senhaConfere(tentativa: string) {
-  const senha = process.env.SENHA_EDICAO;
-  if (!senha || !process.env.SEGREDO_SESSAO) return false;
-  const a = createHash('sha256').update(tentativa).digest();
-  const b = createHash('sha256').update(senha).digest();
-  return timingSafeEqual(a, b);
-}
-
-export function criarToken() {
-  const base = `editor.${Math.floor(Date.now() / 1000) + DURACAO_S}`;
+// Agora o token é criado usando o ID real do usuário
+export async function criarToken(userId: string) {
+  const base = `${userId}.${Math.floor(Date.now() / 1000) + DURACAO_S}`;
   return `${base}.${assinar(base)}`;
 }
 
-function tokenValido(token?: string) {
-  if (!token || !process.env.SEGREDO_SESSAO) return false;
+// Extrai e valida o ID guardado dentro do token
+function lerIdDoToken(token?: string): string | null {
+  if (!token) return null;
   const partes = token.split('.');
-  if (partes.length !== 3) return false;
-  const [papel, exp, assinatura] = partes;
+  if (partes.length !== 3) return null;
+  
+  const [userId, exp, assinatura] = partes;
   const a = Buffer.from(assinatura);
-  const b = Buffer.from(assinar(`${papel}.${exp}`));
-  if (a.length !== b.length || !timingSafeEqual(a, b)) return false;
-  return papel === 'editor' && Number(exp) > Date.now() / 1000;
+  const b = Buffer.from(assinar(`${userId}.${exp}`));
+  
+  if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
+  if (Number(exp) < Date.now() / 1000) return null; // Sessão expirada
+  
+  return userId;
 }
 
+// Nova função crucial que usaremos no banco de dados para saber "quem" está logado
+export async function obterIdLogado() {
+  const c = await cookies();
+  return lerIdDoToken(c.get(NOME)?.value);
+}
+
+// Mantemos o nome ehEditor para o seu frontend continuar funcionando sem quebrar
 export async function ehEditor() {
-  return tokenValido((await cookies()).get(NOME)?.value);
+  const userId = await obterIdLogado();
+  return Boolean(userId); // Retorna true se houver um usuário logado
 }
 
-export const negado = () => NextResponse.json({ erro: 'Entre com a senha para editar.' }, { status: 401 });
+export const negado = () => NextResponse.json({ erro: 'Entre com a sua conta para editar.' }, { status: 401 });

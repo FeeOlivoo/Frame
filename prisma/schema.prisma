@@ -7,6 +7,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Tabela de Usuários (Você e seus amigos)
+model User {
+  id        String   @id @default(uuid())
+  nome      String
+  email     String   @unique
+  senha     String   // Aqui guardaremos a senha criptografada (nunca em texto limpo)
+  animes    Anime[]  // Relacionamento: 1 Usuário tem N animes/séries
+  criadoEm  DateTime @default(now()) @map("criado_em")
+
+  @@map("usuarios")
+}
+
 // tipo:    'anime' | 'filme' | 'serie'
 // status:  'assistido' | 'quero_ver'   (validado na API; SQLite não tem enum)
 // nota:    1 a 5 estrelas (null = sem nota)
@@ -28,6 +40,11 @@ model Anime {
   idExterno          Int?     @map("id_externo") // id na AniList ou no TMDB
   comentario         String? // comentário pessoal sobre o título
   dataAdicao         DateTime @default(now()) @map("data_adicao")
+
+  // --- NOVAS LINHAS AQUI ---
+  // Relacionamento: Este anime pertence a um usuário específico
+  userId             String?   @map("user_id")
+  user               User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("animes")
 }
