@@ -13,6 +13,7 @@ export default function Entrar({ onEntrou, onFechar }: Props) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [mostrarSenha, setMostrarSenha] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
   const [sucesso, setSucesso] = useState<string | null>(null);
   const [enviando, setEnviando] = useState(false);
@@ -104,15 +105,25 @@ export default function Entrar({ onEntrou, onFechar }: Props) {
           className="mt-5 w-full border-b border-ink bg-transparent py-2 text-base outline-none placeholder:text-faint focus:border-accent"
         />
 
-        <input
-          type="password"
-          autoComplete={modo === 'entrar' ? 'current-password' : 'new-password'}
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          placeholder="Senha"
-          aria-label="Senha"
-          className="mt-5 w-full border-b border-ink bg-transparent py-2 text-base outline-none placeholder:text-faint focus:border-accent"
-        />
+        <div className="mt-5 flex items-center border-b border-ink">
+          <input
+            type={mostrarSenha ? 'text' : 'password'}
+            autoComplete={modo === 'entrar' ? 'current-password' : 'new-password'}
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="Senha"
+            aria-label="Senha"
+            className="w-full bg-transparent py-2 text-base outline-none placeholder:text-faint focus:border-accent"
+          />
+          <button
+            type="button"
+            onClick={() => setMostrarSenha((valor) => !valor)}
+            className="px-1 text-xs text-mute hover:text-ink"
+            aria-label={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}
+          >
+            {mostrarSenha ? 'Ocultar' : 'Mostrar'}
+          </button>
+        </div>
 
         {erro && <p className="mt-3 text-sm text-alert text-red-500">{erro}</p>}
         {sucesso && <p className="mt-3 text-sm text-green-500">{sucesso}</p>}
@@ -130,6 +141,16 @@ export default function Entrar({ onEntrou, onFechar }: Props) {
           </button>
         </div>
         
+        {modo === 'entrar' && (
+          <button
+            type="button"
+            onClick={() => { window.location.href = '/esqueci-senha'; }}
+            className="mt-4 block w-full text-center text-sm text-mute hover:text-ink"
+          >
+            Esqueci minha senha
+          </button>
+        )}
+
         {/* Botão para alternar entre Login e Cadastro */}
         <div className="mt-6 border-t border-rule pt-4 text-center text-sm">
           <button
