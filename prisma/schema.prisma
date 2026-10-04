@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// tipo:    'anime' | 'filme' | 'serie'
+// status:  'assistido' | 'quero_ver'   (validado na API; SQLite não tem enum)
+// nota:    1 a 5 estrelas (null = sem nota)
+// generos: nomes separados por '|'  (ex.: "Ação|Fantasia")
+model Anime {
+  id                 String   @id @default(uuid())
+  tipo               String   @default("anime")
+  titulo             String
+  urlCapa            String   @map("url_capa")
+  status             String   @default("quero_ver")
+  nota               Int?
+  personagemFavorito String?  @map("personagem_favorito")
+  favorito           Boolean  @default(false)
+  sinopse            String?
+  ano                Int?
+  generos            String?
+  episodios          Int?
+  duracao            Int? // minutos (filme: total | anime/série: por episódio)
+  idExterno          Int?     @map("id_externo") // id na AniList ou no TMDB
+  comentario         String? // comentário pessoal sobre o título
+  dataAdicao         DateTime @default(now()) @map("data_adicao")
+
+  @@map("animes")
+}

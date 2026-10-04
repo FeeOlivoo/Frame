@@ -1,0 +1,138 @@
+# Checklist de animes
+
+## Minha lista
+
+- [ ]  A Silent Voice
+- [x]  Akame ga Kill!
+- [x]  Alya Sometimes Hides Her Feelings in Russian
+- [ ]  Anohana: The Flower We Saw That Day
+- [ ]  Ao Haru Ride
+- [ ]  Attack on Titan
+- [ ]  Bakuman
+- [ ]  Berserk
+- [ ]  Black Clover
+- [ ]  Black Lagoon
+- [ ]  Bleach
+- [ ]  Blue Box
+- [x]  Blue Lock
+- [ ]  Bungo Stray Dogs
+- [ ]  Cardcaptor Sakura
+- [ ]  Castle in the Sky
+- [x]  Chainsaw Man
+- [x]  Classroom of the Elite
+- [ ]  Clannad
+- [ ]  Code Geass
+- [x]  Cowboy Bebop
+- [x]  Dandadan
+- [x]  Darling in the FRANXX
+- [ ]  Death Note
+- [ ]  Death Parade
+- [x]  Demon Slayer
+- [ ]  Digimon Adventure
+- [ ]  Dragon Ball
+- [ ]  Dragon Ball Super
+- [ ]  Dragon Ball Z
+- [ ]  Fairy Tail
+- [x]  Dr. Stone
+- [ ]  Elfen Lied
+- [ ]  Fate/stay night: Unlimited Blade Works
+- [ ]  Fate/Zero
+- [x]  Fire Force
+- [ ]  FLCL
+- [ ]  Frieren: Beyond Journey’s End
+- [ ]  Fruits Basket
+- [x]  Gachiakuta
+- [ ]  Gintama
+- [ ]  Golden Time
+- [ ]  Great Teacher Onizuka (GTO)
+- [x]  Haikyuu!!
+- [ ]  Hajime no Ippo
+- [x]  Hell's Paradise
+- [ ]  Hellsing Ultimate
+- [x]  Hokkaido Gals Are Super Adorable!
+- [x]  Horimiya
+- [ ]  Howl's Moving Castle
+- [x]  Hunter x Hunter
+- [ ]  Initial D
+- [ ]  Inuyasha
+- [ ]  JoJo’s Bizarre Adventure
+- [x]  Jujutsu Kaisen
+- [ ]  Kaguya-sama: Love is War
+- [ ]  Kiki's Delivery Service
+- [ ]  Kimi ni Todoke
+- [ ]  KonoSuba
+- [ ]  Kubo Won't Let Me Be Invisible
+- [ ]  Kuroko no Basket
+- [ ]  Lovely★Complex
+- [ ]  Made in Abyss
+- [ ]  Maid Sama!
+- [x]  MASHLE: Magic and Muscles
+- [ ]  Mob Psycho 100
+- [ ]  Monster 📌
+- [x]  More than a Married Couple, but Not Lovers
+- [x]  Moshoku Tensei
+- [x]  My Dress-Up Darling
+- [x]  My Hero Academia
+- [ ]  My Love Story!!
+- [ ]  My Neighbor Totoro
+- [ ]  Nausicaä of the Valley of the Wind
+- [x]  Naruto
+- [ ]  Naruto Shippuden
+- [ ]  Neon Genesis Evangelion 📌
+- [ ]  Nisekoi
+- [ ]  No Game No Life
+- [ ]  One Piece
+- [ ]  One Punch Man
+- [ ]  Oregairu
+- [ ]  Overlord
+- [ ]  Parasyte: The Maxim
+- [x]  Pokémon
+- [ ]  Ponyo
+- [ ]  Princess Mononoke
+- [ ]  Psycho-Pass
+- [ ]  Rascal Does Not Dream of Bunny Girl Senpai
+- [x]  Re:ZERO
+- [ ]  ReLIFE
+- [x]  Rent-a-Girlfriend
+- [x]  Ririsa, uma garota 2.5D
+- [ ]  Rurouni Kenshin
+- [x]  Sakamoto Days
+- [ ]  Sailor Moon
+- [ ]  Samurai Champloo
+- [x]  Shangri-La Frontier
+- [ ]  Slam Dunk
+- [x]  Solo Leveling
+- [ ]  Spirited Away
+- [ ]  Spy x Family
+- [ ]  Steins;Gate
+- [x]  Sword Art Online
+- [ ]  That Time I Got Reincarnated as a Slime
+- [ ]  The Beginning After the End
+- [x]  The Fragrant Flower Blooms With Dignity
+- [ ]  The Promised Neverland
+- [x]  The Quintessential Quintuplets
+- [ ]  The Rising of the Shield Hero
+- [ ]  Tomo-chan Is a Girl!
+- [ ]  Tonikawa: Over the Moon for You
+- [ ]  Toradora!
+- [x]  Tokyo Ghoul
+- [ ]  Tokyo Revengers
+- [ ]  Trigun
+- [ ]  Tsuki ga Kirei
+- [ ]  Violet Evergarden
+- [x]  Vinland Saga
+- [ ]  Weathering With You
+- [x]  Wind Breaker
+- [ ]  Wotakoi: Love is Hard for Otaku
+- [ ]  Your Lie in April
+- [ ]  Your Name
+- [ ]  Yu Yu Hakusho
+- [x]  De Caipira a Mestre Espadachim
+
+Gurren lagann
+
+Ranking of kings
+
+Bna 
+
+Dungeon meshi

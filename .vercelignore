@@ -1,0 +1,11 @@
+.env
+.env.*
+node_modules
+.next
+scripts
+prisma/*.db
+prisma/*.db-journal
+backup-animes.json
+backup-dev.db
+relatorio-*.txt
+*.zip

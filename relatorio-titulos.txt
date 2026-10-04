@@ -1,0 +1,138 @@
+SIMULAÇÃO - nada foi salvo
+
+ALTERADOS (85)
+  - Sousou no Frieren  =>  Frieren: Beyond Journey’s End
+  - Enen no Shouboutai  =>  Fire Force
+  - Koe no Katachi  =>  A Silent Voice
+  - Tokidoki Bosotto Rossiya-go de Dereru Tonari no Alya-san  =>  Alya Sometimes Hides Her Feelings in Russian
+  - Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.  =>  Anohana: The Flower We Saw That Day
+  - Ao Haru Ride  =>  Blue Spring Ride
+  - Shingeki no Kyojin  =>  Attack on Titan
+  - Kenpuu Denki Berserk  =>  Berserk
+  - BLACK LAGOON  =>  Black Lagoon
+  - BLEACH  =>  Bleach
+  - Ao no Hako  =>  Blue Box
+  - Blue Lock  =>  BLUE LOCK
+  - Bungou Stray Dogs  =>  Bungo Stray Dogs
+  - Tenkuu no Shiro Laputa  =>  Castle in the Sky
+  - Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e  =>  Classroom of the Elite
+  - CLANNAD  =>  Clannad
+  - Dandadan  =>  DAN DA DAN
+  - Darling in the Franxx  =>  DARLING in the FRANXX
+  - DEATH NOTE  =>  Death Note
+  - Digimon Adventure  =>  Digimon: Digital Monsters
+  - FAIRY TAIL  =>  Fairy Tail
+  - GTO  =>  GTO: Great Teacher Onizuka
+  - Haikyuu!!  =>  HAIKYU!!
+  - Hajime no Ippo: Rising  =>  Hajime No Ippo: The Fighting! - Rising -
+  - Jigokuraku  =>  Hell’s Paradise
+  - HELLSING OVA  =>  Hellsing Ultimate
+  - Dosanko Gal wa Namara Menkoi  =>  Hokkaido Gals Are Super Adorable!
+  - Howl no Ugoku Shiro  =>  Howl‘s Moving Castle
+  - HUNTER×HUNTER  =>  Hunter x Hunter
+  - Initial D  =>  Initial D 1st Stage
+  - Inuyasha  =>  InuYasha
+  - Jujutsu Kaisen  =>  JUJUTSU KAISEN
+  - Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen  =>  Kaguya-sama: Love is War
+  - Majo no Takkyuubin  =>  Kiki's Delivery Service
+  - Kimi ni Todoke  =>  Kimi ni Todoke: From Me to You
+  - Kono Subarashii Sekai ni Shukufuku wo!  =>  KONOSUBA -God's blessing on this wonderful world!
+  - Kubo-san wa Mob wo Yurusanai  =>  Kubo Won't Let Me Be Invisible
+  - Kuroko no Basket  =>  Kuroko's Basketball
+  - Lovely★Complex  =>  Lovely Complex
+  - Kaichou wa Maid-sama!  =>  Maid-Sama!
+  - MASHLE  =>  MASHLE: MAGIC AND MUSCLES
+  - MONSTER  =>  Monster
+  - Fuufu Ijou, Koibito Miman.  =>  More than a Married Couple, but Not Lovers.
+  - Sono Bisque Doll wa Koi wo Suru  =>  My Dress-Up Darling
+  - Boku no Hero Academia  =>  My Hero Academia
+  - Ore Monogatari!!  =>  My Love Story!!
+  - Tonari no Totoro  =>  My Neighbor Totoro
+  - NARUTO  =>  Naruto
+  - NARUTO: Shippuuden  =>  Naruto: Shippuden
+  - Shin Seiki Evangelion  =>  Neon Genesis Evangelion
+  - No Game No Life  =>  No Game, No Life
+  - One Punch Man  =>  One-Punch Man
+  - Yahari Ore no Seishun Love Come wa Machigatteiru.  =>  My Teen Romantic Comedy SNAFU
+  - Kiseijuu: Sei no Kakuritsu  =>  Parasyte -the maxim-
+  - Gake no Ue no Ponyo  =>  Ponyo
+  - Mononoke-hime  =>  Princess Mononoke
+  - Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai  =>  Rascal Does Not Dream of Bunny Girl Senpai
+  - Re:Zero kara Hajimeru Isekai Seikatsu  =>  Re:ZERO -Starting Life in Another World-
+  - Kanojo, Okarishimasu  =>  Rent-a-Girlfriend
+  - 2.5 Jigen no Ririsa  =>  2.5 Dimensional Seduction
+  - Rurouni Kenshin: Meiji Kenkaku Romantan  =>  Rurouni Kenshin
+  - Bishoujo Senshi Sailor Moon  =>  Sailor Moon
+  - SLAM DUNK  =>  Slam Dunk
+  - Ore dake Level Up na Ken  =>  Solo Leveling
+  - Sen to Chihiro no Kamikakushi  =>  Spirited Away
+  - SPY×FAMILY  =>  SPY x FAMILY
+  - Tensei Shitara Slime Datta Ken  =>  That Time I Got Reincarnated as a Slime
+  - Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru?  =>  The Beginning After the End
+  - Kaoru Hana wa Rin to Saku  =>  The Fragrant Flower Blooms With Dignity
+  - Yakusoku no Neverland  =>  The Promised Neverland
+  - Go-toubun no Hanayome  =>  The Quintessential Quintuplets
+  - Tate no Yuusha no Nariagari  =>  The Rising of the Shield Hero
+  - Tomo-chan wa Onnanoko!  =>  Tomo-chan Is a Girl!
+  - Tonikaku Kawaii  =>  TONIKAWA: Over The Moon For You
+  - TRIGUN  =>  Trigun
+  - Tsuki ga Kirei  =>  Tsukigakirei
+  - VINLAND SAGA  =>  Vinland Saga
+  - Tenki no Ko  =>  Weathering With You
+  - Wotaku ni Koi wa Muzukashii  =>  Wotakoi: Love is Hard for Otaku
+  - Shigatsu wa Kimi no Uso  =>  Your lie in April
+  - Yuu☆Yuu☆Hakusho  =>  Yu Yu Hakusho: Ghostfiles
+  - Katainaka no Ossan, Kensei ni Naru  =>  From Old Country Bumpkin to Master Swordsman
+  - Tengen Toppa Gurren Lagann  =>  Gurren Lagann
+  - Ousama Ranking  =>  Ranking of Kings
+  - Dungeon Meshi  =>  Delicious in Dungeon
+
+NÃO IDENTIFICADOS (edite pelo app) (0)
+  (nenhum)
+
+ERROS (rode de novo) (0)
+  (nenhum)
+
+JÁ ESTAVAM CERTOS (42)
+  - Akame ga Kill!
+  - Bakuman.
+  - Black Clover
+  - Cardcaptor Sakura
+  - Chainsaw Man
+  - Code Geass: Hangyaku no Lelouch DVD Magazine
+  - Cowboy Bebop
+  - Death Parade
+  - Onigiri
+  - Dragon Ball
+  - Dragon Ball Super
+  - Dragon Ball Z
+  - Dr. STONE
+  - Elfen Lied
+  - Fate/stay night: Unlimited Blade Works
+  - Fate/Zero
+  - FLCL
+  - Fruits Basket
+  - Gachiakuta
+  - Gintama
+  - Golden Time
+  - Horimiya
+  - Made in Abyss
+  - Mob Psycho 100
+  - Nisekoi
+  - ONE PIECE
+  - Overlord
+  - Pokémon Evolutions
+  - PSYCHO-PASS
+  - ReLIFE
+  - SAKAMOTO DAYS
+  - Samurai Champloo
+  - Shangri-La Frontier
+  - Steins;Gate
+  - Sword Art Online
+  - Toradora!
+  - Tokyo Ghoul
+  - Tokyo Revengers
+  - Violet Evergarden
+  - WIND BREAKER
+  - Suntory Minami Alps no Tennen Mizu
+  - BNA

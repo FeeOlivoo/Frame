@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #ecebe4;
+  --wash: #e2e1d8;
+  --panel: #f6f5ef;
+  --ink: #15171a;
+  --mute: #5d6168;
+  --faint: #727580;
+  --rule: #c8c9c0;
+  --accent: #2a3fa8;
+  --alert: #9b2c2c;
+  color-scheme: light;
+}
+
+:root.dark {
+  --paper: #15171c;
+  --wash: #1f222a;
+  --panel: #1c1f26;
+  --ink: #e9e7e0;
+  --mute: #a3a7af;
+  --faint: #7d818b;
+  --rule: #363a45;
+  --accent: #9fadff;
+  --alert: #f08a82;
+  color-scheme: dark;
+}
+
+/* cada seção tem sua cor de destaque: animes = azul, filmes = vinho, séries = verde */
+[data-secao='filme'] { --accent: #8c2f45; }
+[data-secao='serie'] { --accent: #1f6b4f; }
+:root.dark [data-secao='filme'] { --accent: #f2a0b4; }
+:root.dark [data-secao='serie'] { --accent: #86d9b5; }
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-wash: var(--wash);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-faint: var(--faint);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-alert: var(--alert);
+  --font-display: var(--font-newsreader), Georgia, serif;
+  --font-ui: var(--font-public), system-ui, sans-serif;
+}
+
+body {
+  @apply bg-paper font-ui text-ink antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in { animation: fade-in 0.2s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+}
