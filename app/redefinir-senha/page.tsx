@@ -1,10 +1,10 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, Suspense, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-export default function RedefinirSenhaPage() {
+function RedefinirSenhaForm() {
   const searchParams = useSearchParams();
   const token = searchParams.get('token') || '';
 
@@ -138,5 +138,23 @@ export default function RedefinirSenhaPage() {
         </Link>
       </div>
     </main>
+  );
+}
+
+export default function RedefinirSenhaPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-paper px-5 py-10 text-ink sm:flex sm:items-center sm:justify-center">
+          <div className="w-full max-w-md rounded-lg bg-panel p-6 shadow-sm sm:p-8">
+            <p className="text-sm text-mute">
+              Carregando...
+            </p>
+          </div>
+        </main>
+      }
+    >
+      <RedefinirSenhaForm />
+    </Suspense>
   );
 }
