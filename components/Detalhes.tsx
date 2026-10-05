@@ -2,12 +2,13 @@
 import { useEffect, useState } from 'react';
 import Coracao from '@/components/Coracao';
 import { Estrelas } from '@/components/Estrelas';
+import OndeAssistir from '@/components/OndeAssistir';
 import { Anime, STATUS_SINGULAR } from '@/lib/types';
 
 const duracaoTotal = (min: number) =>
   min >= 60 ? `${Math.floor(min / 60)}h${min % 60 ? ` ${min % 60}min` : ''}` : `${min}min`;
 
-type Aba = 'sobre' | 'comentario';
+type Aba = 'sobre' | 'comentario' | 'onde';
 
 interface Props {
   anime: Anime;
@@ -30,7 +31,8 @@ export default function Detalhes({
   onComentario,
   onFechar,
 }: Props) {
-  const [aba, setAba] = useState<Aba>('sobre');
+  // quem quer assistir já abre direto em "Onde assistir"
+  const [aba, setAba] = useState<Aba>(anime.status === 'quero_ver' ? 'onde' : 'sobre');
   const [texto, setTexto] = useState(anime.comentario ?? '');
   const [estado, setEstado] = useState<'parado' | 'salvando' | 'salvo' | 'erro'>('parado');
   const alterado = texto.trim() !== (anime.comentario ?? '');
@@ -138,9 +140,23 @@ export default function Detalhes({
               >
                 Comentário
               </button>
+              <span className="text-faint" aria-hidden="true">
+                /
+              </span>
+              <button
+                onClick={() => setAba('onde')}
+                aria-pressed={aba === 'onde'}
+                className={`py-1 transition-colors ${
+                  aba === 'onde' ? 'text-ink underline decoration-accent decoration-2 underline-offset-8' : 'text-mute hover:text-ink'
+                }`}
+              >
+                Onde assistir
+              </button>
             </nav>
 
-            {aba === 'sobre' ? (
+            {aba === 'onde' ? (
+              <OndeAssistir anime={anime} />
+            ) : aba === 'sobre' ? (
               <div className="mt-6">
                 {anime.sinopse && (
                   <p className="max-w-prose whitespace-pre-line font-display text-lg leading-relaxed">{anime.sinopse}</p>
